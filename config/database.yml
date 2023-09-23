@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: EstebandIn_production
-  username: EstebandIn
-  password: <%= ENV["ESTEBANDIN_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>

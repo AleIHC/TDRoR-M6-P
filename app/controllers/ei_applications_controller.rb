@@ -20,7 +20,7 @@ class EiApplicationsController < ApplicationController
         if @ei_application.save
           notify_admin_application(@ei_application)
           flash[:notice] = "You have successfully applied for the job."
-          redirect_to @ei_job
+          redirect_to ei_applications_path
         else
           flash[:alert] = "There was an error applying for the job."
           redirect_to @ei_job
