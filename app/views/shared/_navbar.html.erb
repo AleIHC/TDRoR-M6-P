@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light p-0" id="mainNav">
+            <div class="container px-4 px-lg-5">
+            <%= link_to root_path, class: "navbar-brand"  do %>
+                <p class="m-auto nav-title web-title">Esteband-In</p>
+            <% end %>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="<%= root_path %>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        
+                                Bienvenido
+
+                        </a>
+                        <ul class="dropdown-menu ms-auto">
+                            <% if ei_user_signed_in? %>
+                            <li><%= link_to "Available Jobs", ei_jobs_path, class: "nav-link px-lg-3 py-3 py-lg-4 dropdown-item" %></li>
+                                <% if current_ei_user.role?('ei_normal_user') %>
+                                <li><%= link_to "My applications", ei_applications_path, class: "nav-link px-lg-3 py-3 py-lg-4 dropdown-item" %></li>
+
+
+                                <% else %>
+                                <li><%= link_to "My dashboard", ei_admin_dashboard_path, class: "nav-link px-lg-3 py-3 py-lg-4 dropdown-item" %></li>
+                                <% end %>
+                            <% else %>
+                            <li><%= link_to "Home", root_path, class:"dropdown-item" %></li>
+                            <% end %>
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                        <% if ei_user_signed_in? %>
+                            <% if current_ei_user.ei_profile %>
+                            <%= link_to "Mi Perfil", ei_profile_path(current_ei_user.ei_profile), class: "nav-link px-lg-3 py-3 py-lg-4" %>
+                            <% else %>
+                            <%= link_to "Crear Perfil", new_ei_profile_path, class: "nav-link px-lg-3 py-3 py-lg-4" %>
+                            <% end %>
+                        <% end %>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <% if ei_user_signed_in? %>
+                                Hola <%= current_ei_user.email %>
+                            <% else %>
+                                Ingreso
+                            <% end %>
+                        </a>
+                        <ul class="dropdown-menu ms-auto">
+                        <% if ei_user_signed_in? %>
+                            <li><%= button_to "Cerrar Sesión", destroy_ei_user_session_path, class: "dropdown-item", method: :delete %></li>
+                            <% if current_ei_user.role?('ei_admin') %>
+                            <li><%= link_to "Crear nueva cuenta", new_ei_user_registration_path, class: "dropdown-item" %></li>
+                            <% end %>
+                        <% else %>
+                            <li><%= link_to "Iniciar Sesión", new_ei_user_session_path, class: "dropdown-item" %></li>
+                        <% end %>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>

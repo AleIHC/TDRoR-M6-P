@@ -1,0 +1,2 @@
+module EiNotificationsHelper
+end

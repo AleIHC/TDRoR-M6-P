@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  ei_user_id: 3
+  position: MyString
+  job_description: MyText
+  salary: 9.99
+  deadline: 2023-09-19
+
+two:
+  id: 2
+  ei_user_id: 3
+  position: MyString
+  job_description: MyText
+  salary: 9.99
+  deadline: 2023-09-19

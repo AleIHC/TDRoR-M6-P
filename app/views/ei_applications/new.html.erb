@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <%= form_with(model: [@ei_job, @ei_application]) do |form| %>
+    <p class="web-title">¿Confirmas la postulación a este puesto?</p>
+    <div class="text-center">
+      <%= form.submit "Postular", class: "btn btn-dark" %>
+      <%= link_to "Cancelar", ei_jobs_path, class: "btn btn-dark" %>
+    </div>
+  <% end %>
+</div>

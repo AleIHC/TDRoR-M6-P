@@ -1,0 +1,20 @@
+<div id="<%= dom_id ei_job %>">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center right-bck">
+        <div class="job-card p-0">
+          <div class="job-content">
+            <h3 class="job-title"><%= ei_job.position %></h3> 
+            <p class="job-description"><%= ei_job.job_description %></p>
+            <p class="job-salary">Salario: $<%= ei_job.salary %></p> 
+            <p class="job-deadline">Postulación disponible hasta: <%= ei_job.deadline %></p>
+          </div>
+          
+          <% if current_ei_user.role?('ei_normal_user') %>
+            <%= link_to "Postular", new_ei_job_ei_application_path(ei_job), class: "btn btn-dark btn-sm float-end m-2", title: "Apply for this job" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

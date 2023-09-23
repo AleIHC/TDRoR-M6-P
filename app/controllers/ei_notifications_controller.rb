@@ -1,0 +1,4 @@
+class EiNotificationsController < ApplicationController
+
+    
+end

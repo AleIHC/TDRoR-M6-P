@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+  <div id="<%= dom_id ei_profile %>" class="estebandin-profile ">
+    <div class="profile-header">
+
+      <% if @ei_profile.profile_picture.attached? %>
+        <%= image_tag @ei_profile.profile_picture, alt: "avatar", class: "profile-picture img-fluid" %>
+      <% end %>
+
+      <h1 class="profile-fullname"><%= "#{ei_profile.first_name} #{ei_profile.last_name}" %></h1>
+      
+      <p class="profile-current-position"><%= ei_profile.current_position %></p>
+    </div>
+
+    <div class="profile-details">
+
+      <p class="profile-detail">
+        <strong>Email:</strong>
+        <%= ei_profile.email %>
+      </p>
+
+      <p class="profile-detail">
+        <strong>Número teléfonico:</strong>
+        <%= ei_profile.phone_number %>
+      </p>
+
+      <p class="profile-detail">
+        <strong>Trabaja en la empresa desde:</strong>
+        <%= ei_profile.work_start_date %>
+      </p>
+      
+    </div>
+    <br>
+    <div class="text-center">
+    <% if current_ei_user == @ei_profile.ei_user %>
+      <%= link_to "Editar Perfil", edit_ei_profile_path(@ei_profile), class:"btn btn-dark" %>
+    <% end %>
+    </div>
+   
+  </div>
+   
+</div>

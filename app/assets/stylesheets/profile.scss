@@ -1,0 +1,138 @@
+.estebandin-profile {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-header {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%; 
+  }
+  
+  
+  .profile-fullname {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .profile-current-position {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+  }
+  
+  .profile-detail {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  //Profile form
+.profile-form {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 400px;
+  width: 100%;
+}
+
+.profile-errors {
+  color: red;
+}
+
+.profile-label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.profile-picture-field {
+  text-align: center;
+}
+
+.profile-file-input {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.profile-field {
+  margin-top: 15px;
+}
+
+.profile-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profile-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+//Postulaciones
+.profile-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 10px;
+}
+
+.profile-table th {
+  background-color: #f2f2f2;
+}
+
+.profile-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.profile-table tr:hover {
+  background-color: #ddd;
+}
+
+.profile-table td {
+  border: 1px solid #ddd;
+}
+
+.profile-table th,
+.profile-table td {
+  text-align: left;
+}
+
+.profile-table th {
+  font-weight: bold;
+}
+
+.profile-table td:first-child {
+  width: 70%;
+}
+
+.profile-table p {
+  margin-top: 20px;
+}

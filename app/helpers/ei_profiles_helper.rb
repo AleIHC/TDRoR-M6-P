@@ -1,0 +1,2 @@
+module EiProfilesHelper
+end

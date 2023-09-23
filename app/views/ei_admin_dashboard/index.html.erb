@@ -1,0 +1,28 @@
+<div class=" index-section container-fluid d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+  <h1 class="mb-5 web-title">Mensajes</h1>
+    <% if @notifications.present? %>
+      <% @notifications.each do |notification| %>
+        <div class="notification-card">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 d-flex justify-content-center right-bck">
+                <div class="job-card p-0">
+                  <div class="job-content">
+                    <h3 class="job-title">Fecha: <%= notification.created_at.strftime("%B %d, %Y %I:%M %p") %></h3>
+                    <p class="job-description">Mensaje: <%= notification.message %></p>
+                    <% if notification.ei_user.present? %>
+                      <%= link_to "Perfil del usuario", ei_profile_path(notification.ei_user.ei_profile), class:"btn btn-dark btn-sm float-end m-2", title: "Ver perfil del usuario" %>
+                    <% else %>
+                      <em>No application user associated with this notification.</em>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No notifications found.</p>
+    <% end %>
+</div>

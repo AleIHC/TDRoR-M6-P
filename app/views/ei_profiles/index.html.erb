@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="web-title">Profiles</h1>
+
+<div id="ei_profiles">
+  <% @ei_profiles.each do |ei_profile| %>
+    <%= render ei_profile %>
+    <p>
+      <%= link_to "Show this ei profile", ei_profile %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ei profile", new_ei_profile_path %>

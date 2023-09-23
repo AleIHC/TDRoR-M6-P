@@ -1,0 +1,60 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+  <div id="<%= dom_id ei_profile %>" class="estabndin-profile">
+  <h1 class="text-center mb-3 web-title">Crear Perfil</h1>
+
+    <%= form_with(model: ei_profile, class: 'profile-form') do |form| %>
+      <% if ei_profile.errors.any? %>
+        <div class="profile-errors">
+          <h2><%= pluralize(ei_profile.errors.count, "error") %> prohibited this ei_profile from being saved:</h2>
+
+          <ul>
+            <% ei_profile.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form.hidden_field :ei_user_id, value: current_ei_user.id %>
+
+      <div class="field profile-picture-field">
+        <%= form.label :profile_picture, "Foto de perfil", class: 'profile-label' %>
+        <%= form.file_field :profile_picture, class: 'profile-file-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :first_name, "Nombre", class: 'profile-label' %>
+        <%= form.text_field :first_name, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :last_name, "Apellido", class: 'profile-label' %>
+        <%= form.text_field :last_name, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :email, "Email", class: 'profile-label' %>
+        <%= form.text_field :email, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :phone_number, "Número de teléfono", class: 'profile-label' %>
+        <%= form.text_field :phone_number, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :current_position, "Puesto actual", class: 'profile-label' %>
+        <%= form.text_field :current_position, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.label :work_start_date, "En la empresa desde:", class: 'profile-label' %>
+        <%= form.date_field :work_start_date, class: 'profile-input' %>
+      </div>
+
+      <div class="field profile-field">
+        <%= form.submit "Guardar", class: 'btn btn-dark' %>
+      </div>
+    <% end %>
+  </div>
+</div>

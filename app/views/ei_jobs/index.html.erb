@@ -1,0 +1,16 @@
+<div id="ei_jobs" class="index-section d-flex flex-column justify-content-center align-items-center vh-100">
+  <h1 class="web-title">Puestos disponibles</h1>
+
+  <% if current_ei_user.role?('ei_admin') %>
+    <%= link_to "Publicar nuevo puesto", new_ei_job_path, class: "btn btn-dark mb-5" %>
+  <% end %>
+  
+
+  <div class="row">
+    <% @ei_jobs.each do |ei_job| %>
+      <div class="col-md-6 mb-4">
+        <%= render ei_job %>
+      </div>
+    <% end %>
+  </div>
+</div>

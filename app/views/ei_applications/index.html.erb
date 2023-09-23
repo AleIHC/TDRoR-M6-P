@@ -1,0 +1,28 @@
+<div class=" container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+  <div>
+    <div class="estebandin-profile">
+      <h1 class="web-title">My Applications</h1>
+
+      <% if @ei_user.ei_applications.any? %>
+        <table class="profile-table">
+          <thead>
+            <tr>
+              <th>Puesto</th>
+              <th>Fecha de postulación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @ei_user.ei_applications.each do |application| %>
+              <tr>
+                <td><%= application.ei_job.position %></td>
+                <td><%= application.created_at.strftime("%B %d, %Y %I:%M %p") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>No has postulado a ningún puesto aún</p>
+      <% end %>
+    </div>
+  </div>
+</div>
